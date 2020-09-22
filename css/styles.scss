@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin-top: 100px;
+  width: 50%;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  ul {
+    margin-top: 10px;
+    list-style: none;
+    p {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.core {
+  width: 54%;
+  border: 2px solid rgb(117, 3, 128);
+  border-radius: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: hidden;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    .menu {
+      height: 40px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid rgb(117, 3, 128);
+      border-right: 2px solid rgb(117, 3, 128);
+      background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);
+      transition: all 0.5s;
+    }
+    .menu:hover {
+      color: #fff;
+      font-weight: 600;
+      background-image: linear-gradient(
+        90deg,
+        #a32d9d 0%,
+        #469dcc 51%,
+        #a5299f 100%
+      );
+    }
+  }
+}
+.none{
+  display: none;
+}
+
+#operaciones{
+  background-color: aquamarine;
+  display: flex;
+  justify-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+  button{
+    width: 100px;
+    border-radius: 60px;
+    height: 100px;
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+    border: 2px solid #0396FF;
+    font-weight: 600;
+  }
+  button:hover{
+    background-image: linear-gradient( 45deg, #b0d9f8 30%, #0580d8 100%);
+  }
+}
+
+// background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
