@@ -2,13 +2,12 @@ $(function(){
 
    cadena = '{ba,ab, c, d}';
    cadena2= '{ c, d, e, f}';
-   palabra = 'fredy';
 
-   difference(cadena, cadena2);
-   cardinalidad(cadena);
+   dif = difference(cadena, cadena2);
+  console.log("la cardinalidad es: ", cardinalidad(cadena));
    
-   inverse(cadena);
-   inverse(palabra);
+   console.log("la diferencia es: "+dif);
+
 
 });
 
@@ -24,8 +23,7 @@ function difference(cadena1, cadena2){
       return !(Lista2.includes(i));
    });
 
-   console.log(vector);
-
+   return vector;
 }
 
 function ToList(cadena){
@@ -56,5 +54,5 @@ function cardinalidad(cadena){
 
    Lenguaje = ToList(cadena);
    Size = Lenguaje.length;
-   console.log("La cardinalidad es: "+Size);
+   return Size;
 }
