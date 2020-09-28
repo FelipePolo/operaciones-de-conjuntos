@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+.banner, .label{
+  text-align: center;
+}
+.lista{
+  background-color: #bedcfc;
+  box-shadow: 2px 2px 10px #666;
+  padding: 15px;
+}
+#barra{
+	padding: 15px;
+}

@@ -1,11 +1,17 @@
 $(function(){
-	$("#entrada").hide();
+	
+	$("#entrada1").hide();
+	$("#entrada2").hide();
+	$("#resultado").hide();
 	$("#unionDeAlfabetos").on("click",function(e){
 		console.log("entra");
-		$("#core").hide();
 		$("#label1").html("Primer Alfabeto {");
 		$("#label2").html("Segundo Alfabeto {");
-		$("#entrada").show();
+		$("#boton").html("Unir Alfabetos");
+		$("#entrada1").show();
+		$("#entrada2").show();
+		$("#resultado").show();
+		$("#boton").show();
 		
 	});
 	
@@ -18,7 +24,7 @@ $(function(){
 		
 	});
 	
-	$("#unir").on("click",function(e){
+	$("#boton").on("click",function(e){
 		var elemento1 = $("#entrada1").val().split(",");
 		var elemento2 = $("#entrada2").val().split(",");
 		union(elemento1, elemento2);
