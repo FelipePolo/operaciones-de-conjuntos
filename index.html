@@ -47,7 +47,7 @@
                 		Operaciones con lenguajes
             		</button>
             		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-		                <a href="#" class="dropdown-item">Union de lenguajes</a>
+		                <a id="unionDeLenguajes" href="#" class="dropdown-item">Union de lenguajes</a>
 		                <a href="#" class="dropdown-item">Diferencia de lenguajes</a>
 		                <a href="#" class="dropdown-item">Interseccion de lenguajes</a>
 		                <a href="#" class="dropdown-item">Concatenacion de lenguajes</a>
@@ -74,17 +74,17 @@
 			<div class="col">
 				<div class="row">
 					<div class="col">
-						<div class=" row form-group">
-							<label id="label1" class="label col-4" ></label>
-				    		<input id="entrada1" class="form-control col-6" placeholder="A,B,C,D...">
+						<div class="form-group">
+							<label id="label1" class="label " ></label>
+				    		<input id="entrada1" class="form-control" placeholder="A,B,C,D...">
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<div class=" row form-group">
-							<label id="label2" class="label col-4" ></label>
-						    <input id="entrada2"  class="form-control col-6" placeholder="A,B,C,D...">
+						<div class="form-group">
+							<label id="label2" class="label" ></label>
+						    <input id="entrada2"  class="form-control" placeholder="A,B,C,D...">
 						</div>
 					</div>
 				</div>
@@ -97,7 +97,16 @@
 				</div>
 			</div>
 			<div class="col-6">
-				<input id="resultado" class="form-control col-6" placeholder="Resultado">
+				<div id="cResultado">
+					<div class="card col-12" >
+		  				<div class="card-body">
+		    				<div class="lista">
+		    					<h6 class="card-subtitle mb-2 text-muted">Resultado</h6>
+			    				<p id="resultado"></p>
+		    				</div>
+		  				</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		
