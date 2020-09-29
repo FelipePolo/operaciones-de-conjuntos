@@ -82,12 +82,12 @@ function unir(elemento1, elemento2){
 			resultado.push(elemento2[i]);	
 		}
 	}
-	$("#resultado").html("{"+elemento1+"} U"+" {"+elemento2+"} = {"+resultado+"}");//se imprime el resultado en a card
+	//$("#resultado").html("{"+elemento1+"} U"+" {"+elemento2+"} = {"+resultado+"}");//se imprime el resultado en a card
+	imprimir(["{",elemento1,"}"," U ","{",elemento2,"}"," = ","{",resultado,"}"],11);
 }
 
 function intersectar(elemento1, elemento2){
 	var resultado=[];
-	
 	//se compara el segundo vector con los elementos del primero, si se encuentra ya no se coloca 
 	for(i = 0;i < elemento1.length; i++){
 		var k = false;
@@ -100,5 +100,13 @@ function intersectar(elemento1, elemento2){
 			resultado.push(elemento2[i]);	
 		}
 	}
-	$("#resultado").html("{"+elemento1+"} ∩"+" {"+elemento2+"} = {"+resultado+"}");//se imprime el resultado en a card
+	imprimir(["{",elemento1,"}"," ∩ ","{",elemento2,"}"," = ","{",resultado,"}"],11);
+}
+
+function imprimir(vector,tam){
+	resultado="";
+	for(i=0;i<tam;i++){
+		resultado= resultado + vector[i];
+	}
+	$("#resultado").html(resultado);
 }
