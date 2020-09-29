@@ -82,7 +82,7 @@ function unir(elemento1, elemento2){
 			resultado.push(elemento2[i]);	
 		}
 	}
-	//$("#resultado").html("{"+elemento1+"} U"+" {"+elemento2+"} = {"+resultado+"}");//se imprime el resultado en a card
+	//la funcion imprimir recive un vector con los elementos a concatenar y el otro atrivuto es el tamaño del vector
 	imprimir(["{",elemento1,"}"," U ","{",elemento2,"}"," = ","{",resultado,"}"],11);
 }
 
