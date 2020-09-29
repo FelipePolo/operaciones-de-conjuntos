@@ -83,8 +83,7 @@ header ul p {
   display: none;
 }
 
-#operaciones {
-  background-color: aquamarine;
+#alfabeto, #lenguaje, #palabra {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,7 +95,7 @@ header ul p {
   height: 100%;
 }
 
-#operaciones button {
+#alfabeto button, #lenguaje button, #palabra button {
   width: 100px;
   border-radius: 60px;
   height: 100px;
@@ -105,7 +104,7 @@ header ul p {
   font-weight: 600;
 }
 
-#operaciones button:hover {
+#alfabeto button:hover, #lenguaje button:hover, #palabra button:hover {
   background-image: linear-gradient(45deg, #b0d9f8 30%, #0580d8 100%);
 }
 /*# sourceMappingURL=styles.css.map */
