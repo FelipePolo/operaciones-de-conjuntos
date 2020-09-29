@@ -1,48 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROCESADOR DE LENGUAJES</title>
-  <link rel="stylesheet" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!--Hojas de Estilo -->    
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <!--Hojas de Estilo -->
+     <title>PROCESADOR DE LENGUAJES</title>
 </head>
 <body>
-  <header>
-    <h1>PROCESADOR DE LENGUAJES</h1>
-    <ul>
-      <li><p>INTEGRANTES:</p></li>
-      <li>ALUMNO A</li>
-      <li>ALUMNO B</li>
-      <li>ALUMNO C</li>
-      <li>ALUMNO D</li>
-    </ul>
-  </header>
-  <div class="core">
-    <div>
-      <button class="menu" onclick="showoperation('alfabeto')" >ALFABETOS</button>
-      <button class="menu" onclick="showoperation('lenguaje')" >LENGUAJES</button>
-      <button class="menu" onclick="showoperation('palabra')" >PALABRAS</button>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="card col-12" >
+	  				<div class="card-body">
+	    				<h1 class="card-title banner">PROCESADOR DE LENGUAJES</h1>
+	    				<div class="lista">
+	    					<h6 class="card-subtitle mb-2 text-muted">Integrantes</h6>
+		    				<p>Felipe Polo - Andres Valencia - Ana Buenahora - Ever Reales</p>
+	    				</div>
+	  				</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="barra">
+			<div class="col-3">
+				<div class="dropdown mb-3">
+            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
+               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                		Operaciones con alfabetos
+            		</button>
+            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+		                <a id="unionDeAlfabetos" href="#" class="dropdown-item">Union entre alfabetos</a>
+		                <a href="#" class="dropdown-item">Interseccion entre alfabetos</a>
+		                <a href="#" class="dropdown-item">Diferencia entre alfabetos</a>
+		            </div>            
+        		</div>
+			</div>
+			<div class="col-3">
+				<div class="dropdown mb-3">
+            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
+               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                		Operaciones con lenguajes
+            		</button>
+            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+		                <a id="unionDeLenguajes" href="#" class="dropdown-item">Union de lenguajes</a>
+		                <a href="#" class="dropdown-item">Diferencia de lenguajes</a>
+		                <a href="#" class="dropdown-item">Interseccion de lenguajes</a>
+		                <a href="#" class="dropdown-item">Concatenacion de lenguajes</a>
+		                <a href="#" class="dropdown-item">Iverso de lenguajes</a>
+		                <a href="#" class="dropdown-item">Potencia de lenguajes</a>
+		                <a href="#" class="dropdown-item">Cardinalidad de lenguajes</a>
+		            </div>            
+        		</div>
+			</div>
+			<div class="col-3">
+				<div class="dropdown mb-3">
+            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
+               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                		Operaciones con palabras
+            		</button>
+            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+		                <a href="#" class="dropdown-item">Cardinalidad de una palabra</a>
+		                <a href="#" class="dropdown-item">Inversa de una palabra</a>
+		            </div>            
+        		</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label id="label1" class="label " ></label>
+				    		<input id="entrada1" class="form-control" placeholder="A,B,C,D...">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label id="label2" class="label" ></label>
+						    <input id="entrada2"  class="form-control" placeholder="A,B,C,D...">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1">
+					</div>
+					<div class="col">
+						<button id="boton" type="submit" class="btn btn-primary"></button>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div id="cResultado">
+					<div class="card col-12" >
+		  				<div class="card-body">
+		    				<div class="lista">
+		    					<h6 class="card-subtitle mb-2 text-muted">Resultado</h6>
+			    				<p id="resultado"></p>
+		    				</div>
+		  				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
     </div>
-    <div id="operaciones">
-      <button id="union" name="alfabeto">unión de alfabetos.</button>
-      <button id="diferencia" name="alfabeto">diferencia entre alfabetos.</button>
-      <button id="interseccion" name="alfabeto">intersección entre alfabetos.</button>
-      <button id="union" name="lenguaje">unión entre lenguajes.</button>
-      <button id="diferencia" name="lenguaje">diferencia entre lenguajes. </button>
-      <button id="interseccion" name="lenguaje">intersección entre lenguajes. </button>
-      <button id="concatenacion" name="lenguaje">concatenación entre lenguajes. </button>
-      <button id="potencia" name="lenguaje">potencia de un lenguaje. </button>
-      <button id="inversa" name="lenguaje"> inversa de un lenguaje. </button>
-      <button id="inversa" name="lenguaje">cardinalidad de un lenguaje. </button>
-      <button id="inversa" name="palabra">cardinalidad de una palabra </button>
-      <button id="inversa" name="palabra">Inversa de una palabra. </button>
-    </div>
-  </div>
-  <form action=""></form>
-
-
-
-  <!-- JAVASCRIPTS -->
-  <script src="./js/UX/showoperations.js"></script>
+    <!--Archivos de javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./js/UX/union.js"></script>
+    <!--Archivos de javascript-->
 </body>
 </html>

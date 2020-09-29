@@ -1,32 +1,20 @@
-var operations = document.getElementById("operaciones").children;
-console.log(operations);
-
-const showoperation = (nombre) => {
-  switch (nombre) {
-    case "alfabeto":
-      onOff(["lenguaje", "palabra"]);
+const onOff = (id) => {
+  switch (id) {
+    case 'palabra':
+      $("#palabra").show()
+      $("#lenguaje").hide()
+      $("#alfabeto").hide()
       break;
-    case "lenguaje":
-      onOff(["alfabeto", "palabra"]);
-      break;
-    case "palabra":
-      onOff(["alfabeto", "lenguaje"]);
+    case 'lenguaje':
+      $("#lenguaje").show()
+      $("#alfabeto").hide()
+      $("#palabra").hide()
       break;
 
     default:
+      $("#alfabeto").show()
+      $("#lenguaje").hide()
+      $("#palabra").hide()
       break;
-  }
-};
-
-const onOff = (nombres) => {
-  for (elemento of operations) {
-    if (
-      elemento.getAttribute("name").substring() === nombres[0] ||
-      elemento.getAttribute("name") === nombres[1]
-    ) {
-      elemento.classList.add("none");
-    } else {
-      elemento.classList.remove("none");
-    }
   }
 };
