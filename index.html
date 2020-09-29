@@ -34,9 +34,9 @@
                 		Operaciones con alfabetos
             		</button>
             		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-		                <a id="unionDeAlfabetos" href="#" class="dropdown-item">Union entre alfabetos</a>
-		                <a href="#" class="dropdown-item">Interseccion entre alfabetos</a>
-		                <a href="#" class="dropdown-item">Diferencia entre alfabetos</a>
+		                <a id="unionDeAlfabetos" href="#" class="alfabeto dropdown-item">Union entre alfabetos</a>
+		                <a id="interseccionDeAlfabetos" href="#" class="alfabeto dropdown-item">Interseccion entre alfabetos</a>
+		                <a href="#" class="alfabeto dropdown-item">Diferencia entre alfabetos</a>
 		            </div>            
         		</div>
 			</div>
@@ -47,13 +47,14 @@
                 		Operaciones con lenguajes
             		</button>
             		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-		                <a id="unionDeLenguajes" href="#" class="dropdown-item">Union de lenguajes</a>
-		                <a href="#" class="dropdown-item">Diferencia de lenguajes</a>
-		                <a href="#" class="dropdown-item">Interseccion de lenguajes</a>
-		                <a href="#" class="dropdown-item">Concatenacion de lenguajes</a>
-		                <a href="#" class="dropdown-item">Inverso de lenguajes</a>
-		                <a href="#" class="dropdown-item">Potencia de lenguajes</a>
-		                <a href="#" class="dropdown-item">Cardinalidad de lenguajes</a>
+
+		                <a id="unionDeLenguajes" href="#" class="lenguaje dropdown-item">Union de lenguajes</a>
+		                <a href="#" class="lenguaje dropdown-item">Diferencia de lenguajes</a>
+		                <a id="interseccionDeLenguajes" href="#" class="lenguaje dropdown-item">Interseccion de lenguajes</a>
+		                <a href="#" class="lenguaje dropdown-item">Concatenacion de lenguajes</a>
+		                <a href="#" class="lenguaje dropdown-item">Inverso de lenguajes</a>
+		                <a href="#" class="lenguaje dropdown-item">Potencia de lenguajes</a>
+		                <a href="#" class="lenguaje dropdown-item">Cardinalidad de lenguajes</a>
 		            </div>            
         		</div>
 			</div>
@@ -76,7 +77,7 @@
 					<div class="col">
 						<div class="form-group">
 							<label id="label1" class="label " ></label>
-				    		<input id="entrada1" class="form-control" placeholder="A,B,C,D...">
+				    		<input id="entrada1" class="form-control" placeholder="{A,B,C,D...}">
 						</div>
 					</div>
 				</div>
@@ -84,7 +85,7 @@
 					<div class="col">
 						<div class="form-group">
 							<label id="label2" class="label" ></label>
-						    <input id="entrada2"  class="form-control" placeholder="A,B,C,D...">
+						    <input id="entrada2"  class="form-control" placeholder="{A,B,C,D...}">
 						</div>
 					</div>
 				</div>
@@ -92,6 +93,8 @@
 					<div class="col-1">
 					</div>
 					<div class="col">
+						<button id="botonUnir" type="submit" class="btn btn-primary"></button>
+						<button id="botonIntersectar" type="submit" class="btn btn-primary"></button>
 						<button id="boton" type="submit" class="btn btn-primary"></button>
 					</div>
 				</div>
