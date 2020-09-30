@@ -18,6 +18,7 @@ $("#boton").click((e) => {
       //se obtienen los valores de los imputs
       valinput1 = getvalues("entrada1");
       valinput2 = getvalues("entrada2");
+      console.log(valinput1)
       // se llama a la funcion union
       resultado = union(valinput1, valinput2);
       //mandar a imprimir el resultado en el div "resultado"
@@ -86,7 +87,7 @@ $("#boton").click((e) => {
 
     case "operacioncardinalidadLenguajes":
       // insertar codigo aqui
-
+      
       //mandar a imprimir el resultado
       logResultado("imprimir el resultado");
       break;
@@ -113,7 +114,7 @@ const getvalues = (idinput) => {
     .val()
     .substring(1, $("#" + idinput).val().length - 1)
     .split(",");
-  return array;
+  return Array.from(new Set(array));
 };
 
 const logResultado = (cadena) => {

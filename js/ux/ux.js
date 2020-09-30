@@ -15,6 +15,8 @@ $(function () {
 			setnames("Primer Palabra", "Segundo Palabra");
 		}
 		// mostrar los div de captura de datos y de resultado
+
+		
 		showFR();
   });
 });
