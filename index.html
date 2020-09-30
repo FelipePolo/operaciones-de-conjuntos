@@ -1,124 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!--Hojas de Estilo -->    
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">    
-    <link rel="stylesheet" href="./css/estilos.css">
-    <!--Hojas de Estilo -->
-     <title>PROCESADOR DE LENGUAJES</title>
-</head>
-<body>
-    <div class="container-fluid">
-		<div class="row">
-			<div class="col">
-				<div class="card col-12" >
-	  				<div class="card-body">
-	    				<h1 class="card-title banner">PROCESADOR DE LENGUAJES</h1>
-	    				<div class="lista">
-	    					<h6 class="card-subtitle mb-2 text-muted">Integrantes</h6>
-		    				<p>Felipe Polo - Andres Valencia - Ana Buenahora - Ever Reales</p>
-	    				</div>
-	  				</div>
-				</div>
-			</div>
-		</div>
-		<div class="row" id="barra">
-			<div class="col-3">
-				<div class="dropdown mb-3">
-            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
-               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                		Operaciones con alfabetos
-            		</button>
-            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-		                <a id="unionDeAlfabetos" href="#" class="alfabeto dropdown-item">Union entre alfabetos</a>
-		                <a id="interseccionDeAlfabetos" href="#" class="alfabeto dropdown-item">Interseccion entre alfabetos</a>
-		                <a href="#" class="alfabeto dropdown-item">Diferencia entre alfabetos</a>
-		            </div>            
-        		</div>
-			</div>
-			<div class="col-3">
-				<div class="dropdown mb-3">
-            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
-               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                		Operaciones con lenguajes
-            		</button>
-            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		                <a id="unionDeLenguajes" href="#" class="lenguaje dropdown-item">Union de lenguajes</a>
-		                <a href="#" class="lenguaje dropdown-item">Diferencia de lenguajes</a>
-		                <a id="interseccionDeLenguajes" href="#" class="lenguaje dropdown-item">Interseccion de lenguajes</a>
-		                <a href="#" class="lenguaje dropdown-item">Concatenacion de lenguajes</a>
-		                <a href="#" class="lenguaje dropdown-item">Inverso de lenguajes</a>
-		                <a href="#" class="lenguaje dropdown-item">Potencia de lenguajes</a>
-		                <a href="#" class="lenguaje dropdown-item">Cardinalidad de lenguajes</a>
-		            </div>            
-        		</div>
-			</div>
-			<div class="col-3">
-				<div class="dropdown mb-3">
-            		<button class="btn dropdown-toggle" type="button" id="dropdownMenuBoton"
-               			data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                		Operaciones con palabras
-            		</button>
-            		<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-		                <a href="#" class="dropdown-item">Cardinalidad de una palabra</a>
-		                <a href="#" class="dropdown-item">Inversa de una palabra</a>
-		            </div>            
-        		</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="row">
-					<div class="col">
-						<div class="form-group">
-							<label id="label1" class="label " ></label>
-				    		<input id="entrada1" class="form-control" placeholder="{A,B,C,D...}">
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<div class="form-group">
-							<label id="label2" class="label" ></label>
-						    <input id="entrada2"  class="form-control" placeholder="{A,B,C,D...}">
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-1">
-					</div>
-					<div class="col">
-						<button id="botonUnir" type="submit" class="btn btn-primary"></button>
-						<button id="botonIntersectar" type="submit" class="btn btn-primary"></button>
-						<button id="boton" type="submit" class="btn btn-primary"></button>
-					</div>
-				</div>
-			</div>
-			<div class="col-6">
-				<div id="cResultado">
-					<div class="card col-12" >
-		  				<div class="card-body">
-		    				<div class="lista">
-		    					<h6 class="card-subtitle mb-2 text-muted">Resultado</h6>
-			    				<p id="resultado"></p>
-		    				</div>
-		  				</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
+    <!--Hojas de Estilo -->
+    <link href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <!--Hojas de Estilo -->
+    <title>PROCESADOR DE LENGUAJES</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="card col-12">
+            <div class="card-body">
+              <h1 class="card-title banner">PROCESADOR DE LENGUAJES</h1>
+              <div class="lista">
+                <h6 class="card-subtitle mb-2 text-muted">Integrantes</h6>
+                <p>
+                  Felipe Polo - Andres Valencia - Ana Buenahora - Ever Reales
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="barra">
+        <div class="col-3">
+          <div class="dropdown mb-3">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenuBoton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="true"
+            >
+              Operaciones con alfabetos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+              <a id="unionDeAlfabetos" href="#" class="alfabeto dropdown-item"
+                >Union entre alfabetos</a
+              >
+              <a
+                id="interseccionDeAlfabetos"
+                href="#"
+                class="alfabeto dropdown-item"
+                >Interseccion entre alfabetos</a
+              >
+              <a href="#" class="alfabeto dropdown-item"
+                >Diferencia entre alfabetos</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="dropdown mb-3">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenuBoton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="true"
+            >
+              Operaciones con lenguajes
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+              <a id="unionDeLenguajes" href="#" class="lenguaje dropdown-item"
+                >Union de lenguajes</a
+              >
+              <a href="#" class="lenguaje dropdown-item"
+                >Diferencia de lenguajes</a
+              >
+              <a
+                id="interseccionDeLenguajes"
+                href="#"
+                class="lenguaje dropdown-item"
+                >Interseccion de lenguajes</a
+              >
+              <a href="#" class="lenguaje dropdown-item"
+                >Concatenacion de lenguajes</a
+              >
+              <a href="#" class="lenguaje dropdown-item"
+                >Inverso de lenguajes</a
+              >
+              <a href="#" class="lenguaje dropdown-item"
+                >Potencia de lenguajes</a
+              >
+              <a href="#" class="lenguaje dropdown-item"
+                >Cardinalidad de lenguajes</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="dropdown mb-3">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenuBoton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="true"
+            >
+              Operaciones con palabras
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
+              <a href="#" class="dropdown-item">Cardinalidad de una palabra</a>
+              <a href="#" class="dropdown-item">Inversa de una palabra</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label id="label1" class="label"></label>
+                <input
+                  id="entrada1"
+                  class="form-control"
+                  placeholder="{A,B,C,D...}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label id="label2" class="label"></label>
+                <input
+                  id="entrada2"
+                  class="form-control"
+                  placeholder="{A,B,C,D...}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col">
+              <button
+                id="botonUnir"
+                type="submit"
+                class="btn btn-primary"
+              ></button>
+              <button
+                id="botonIntersectar"
+                type="submit"
+                class="btn btn-primary"
+              ></button>
+              <button id="boton" type="submit" class="btn btn-primary"></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div id="cResultado">
+            <div class="card col-12">
+              <div class="card-body">
+                <div class="lista">
+                  <h6 class="card-subtitle mb-2 text-muted">Resultado</h6>
+                  <p id="resultado"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--Archivos de javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="./js/UX/union.js"></script>
+    <script src="./js/librerias/jquery-3.5.1.min.js"></script>
+    <script src="./js/librerias/popper.min.js"></script>
+    <script src="./js/librerias/bootstrap.min.js"></script>
+    <script src="./js/funcionalidades/union.js"></script>
     <!--Archivos de javascript-->
-</body>
+  </body>
 </html>

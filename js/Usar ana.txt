@@ -1,1 +1,0 @@
-Copien y peguen mis funciones ellas solo reciben las cadenas necesarias en string 
