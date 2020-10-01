@@ -1,5 +1,5 @@
 // se importan las funciones del archivo funciones.js
-import { union, difference, cardinalidad } from "./funciones.js";
+import { union, difference, cardinalidad, concatenacion } from "./funciones.js";
 // todo los llamados a las funciones suceden aqui!
 
 $("#boton").click((e) => {
@@ -64,11 +64,14 @@ $("#boton").click((e) => {
       logResultado("imprimir el resultado");
       break;
 
-    case "operacionconcatenacionLenguajes":
-      // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+    case "operacionconcatenacionLenguajes":     
+     // insertar codigo aqui
+    //se obtienen los valores de los imputs
+    valinput1 = getvalues("entrada1");
+    valinput2 = getvalues("entrada2");
+    // se llama a la funcion concatenacion by ana
+    //mandar a imprimir el resultado
+     logResultado(concatenacion(valinput1, valinput2));
       break;
 
     case "operacioninversoLenguajes":

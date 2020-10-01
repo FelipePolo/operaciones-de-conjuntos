@@ -42,6 +42,24 @@ const cardinalidad = (cadena) => {
 }
 // insertar aqui las demas funciones!
 
+// funcion concatenación
+function concatenacion(cad1, cad2) {
+  let resultado = [], i =0, j=0;
+  while(i<cad1.length) {
+    let a = cad1[i];
+    j=0;
+    while(j<cad2.length) {
+      let b = cad2[j];
+      resultado.push(a+b);
+      j++;
+    }
+    i++;
+  }
+
+  return resultado;
+}
+
+
 
 //exportando las funciones
-export { union, difference,cardinalidad };
+export { union, difference,cardinalidad,concatenacion};
