@@ -82,13 +82,13 @@ function unir(elemento1, elemento2){
 			resultado.push(elemento2[i]);	
 		}
 	}
-	//la funcion imprimir recive un vector con los elementos a concatenar y el otro atrivuto es el tamaño del vector
+	//la funcion imprimir recibe un vector con los elementos a concatenar y el otro atributo es el tamaño del vector
 	imprimir(["{",elemento1,"}"," U ","{",elemento2,"}"," = ","{",resultado,"}"],11);
 }
 
 function intersectar(elemento1, elemento2){
 	var resultado=[];
-	//se compara el segundo vector con los elementos del primero, si se encuentra ya no se coloca 
+	//se compara el primero vector con los elementos del segundo, si se encuentra se coloca 
 	for(i = 0;i < elemento1.length; i++){
 		var k = false;
 		for(j = 0;j < elemento2.length; j++){
