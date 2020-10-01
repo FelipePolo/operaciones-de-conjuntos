@@ -35,13 +35,57 @@ const difference = (cadena1, cadena2) => {
   return result;
 };
 
-// funcion cardinalidad
-const cardinalidad = (cadena) => {
-  Size = elemento.length;
-  return Size;
+
+
+const potency = (cadena, num) => {
+  let result = [];
+  result = cadena;
+  for (let i = 0; i < num - 1; i++) {
+    result = concatenation(result, cadena);
+  }
+  return `{ ${result} }`;
 }
-// insertar aqui las demas funciones!
+
+
+const concatenation = (cadena1, cadena2) => {
+  var result = [];
+  for (let i = 0; i < cadena1.length; i++) {
+    for (let j = 0; j < cadena2.length; j++) {
+      if (cadena1[i] == "!") {
+        if (!result.includes(cadena2[j])) {
+          result.push(cadena2[j]);
+        }
+      }
+      else if (cadena2[j] == "!") {
+        if (!result.includes(cadena1[j])) {
+          result.push(cadena2[j]);
+        }
+      }
+      else {
+        if (!result.includes(cadena1[i] + cadena2[j])) {
+          result.push(cadena1[i] + cadena2[j]);
+        }
+
+      }
+    }
+  }
+  return result;
+}
+
+const inverse = (cadena) => {
+  let result = [];
+
+  for (let i = 0; i < cadena.length; i++) {
+    let cadenaAux = cadena[i].split("");
+    let aux = "";
+    for (let j = (cadenaAux.length) - 1; j >= 0; j--) {
+      aux += cadenaAux[j];
+    }
+    result.push(aux);
+  }
+  return `{ ${result} }`;
+}
 
 
 //exportando las funciones
-export { union, difference,cardinalidad };
+export { union, difference, concatenation, inverse, potency };

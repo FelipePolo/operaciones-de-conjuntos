@@ -1,5 +1,5 @@
 // se importan las funciones del archivo funciones.js
-import { union, difference, cardinalidad } from "./funciones.js";
+import { union, difference, concatenation, inverse, potency } from "./funciones.js";
 // todo los llamados a las funciones suceden aqui!
 
 $("#boton").click((e) => {
@@ -66,30 +66,38 @@ $("#boton").click((e) => {
 
     case "operacionconcatenacionLenguajes":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      console.log(valinput1)
+      // se llama a la funcion union
+      let concatenacion = [];
+      concatenacion.push(concatenation(valinput1, valinput2));
+      
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(concatenacion);
       break;
-
     case "operacioninversoLenguajes":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = inverse(valinput1);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
       break;
 
-    case "operacionpotenciaLenguajes":
-      // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
-      break;
 
     case "operacioncardinalidadLenguajes":
       // insertar codigo aqui
-      
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = valinput1.length;
+      //mandar a imprimir el resultado en el div "resultado"
+      $("#resultado").html(valinput1.length);
       break;
 
     case "operacioncardinalidadPalabras":
@@ -105,8 +113,21 @@ $("#boton").click((e) => {
       //mandar a imprimir el resultado
       logResultado("imprimir el resultado");
       break;
+    case "operacionpotenciaLenguajes":
+      // insertar codigo aqui
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = document.getElementById("entrada2").value;
+      console.log(valinput2)
+      // se llama a la funcion union
+      resultado = potency(valinput1, valinput2);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
+      break;
+
   }
 });
+
 
 // obtiene los valores del input que le solicites y te regresa un array
 const getvalues = (idinput) => {
@@ -118,5 +139,7 @@ const getvalues = (idinput) => {
 };
 
 const logResultado = (cadena) => {
+
   $("#resultado").html(cadena);
+
 };
