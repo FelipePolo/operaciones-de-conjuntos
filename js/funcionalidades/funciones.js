@@ -17,6 +17,22 @@ const union = (elemento1, elemento2) => {
   return `{ ${elemento1} } U { ${elemento2} } = { ${resultado} }`;
 };
 
+const interseccion = (elemento1, elemento2) => {
+  var resultado = [];
+  for (let i = 0; i < elemento2.length; i++) {
+    let k = false;
+    for (let j = 0; j < elemento1.length; j++) {
+      if (elemento2[i] == elemento1[j]) {
+        k = true;
+      }
+    }
+    if (k == true) {
+      resultado.push(elemento2[i]);
+    }
+  }
+  return `{ ${elemento1} } ∩ { ${elemento2} } = { ${resultado} }`;
+};
+
 
 const difference = (cadena1, cadena2) => {
   // se convierte en un conjunto dividiendo elementos por la ",", al convertir a conjunto evita que se repitan elemntos dentro de el
@@ -32,7 +48,7 @@ const difference = (cadena1, cadena2) => {
     // conjunto vacío
     result.push("!"); // Este es el simbolo del vacío
   }
-  return result;
+  return  `{ ${cadena1} } ∩ { ${cadena2} } = { ${result} }`;
 };
 
 
@@ -49,6 +65,7 @@ const potency = (cadena, num) => {
 
 const concatenation = (cadena1, cadena2) => {
   var result = [];
+
   for (let i = 0; i < cadena1.length; i++) {
     for (let j = 0; j < cadena2.length; j++) {
       if (cadena1[i] == "!") {
@@ -86,6 +103,15 @@ const inverse = (cadena) => {
   return `{ ${result} }`;
 }
 
+const cardinality = (palabra) => {
+  let array = $("#" + palabra)
+    .val()
+    .split("");
+  return array.length;
+}
+
+
+
 
 //exportando las funciones
-export { union, difference, concatenation, inverse, potency };
+export { union, difference, concatenation, inverse, potency, cardinality, interseccion };
