@@ -17,7 +17,7 @@ const union = (elemento1, elemento2) => {
   return `{ ${elemento1} } U { ${elemento2} } = { ${resultado} }`;
 };
 
-// funcion diferrencia
+
 const difference = (cadena1, cadena2) => {
   // se convierte en un conjunto dividiendo elementos por la ",", al convertir a conjunto evita que se repitan elemntos dentro de el
   let element1 = cadena1;

@@ -10,20 +10,20 @@ $(function () {
 
 		// colocarle los nombres a los label
 		if (operacion.includes("Alfabetos")) {
-			setnames("Primer Alfabeto", "Segundo Alfabeto", 1);
+			setnames("Primer Alfabeto", "Segundo Alfabeto");
 		} else if (operacion.includes("Lenguajes")) {
 			if (operacion.includes("potencia")) {
-				setnames("Lenguaje", "Potencia", 1);
+				setnames("Lenguaje", "Potencia");
 			}
 			else if (operacion.includes("inverso") || operacion.includes("cardinalidad")) {
 
-				setnames("Lenguaje", "", 2);
+				setnames("Lenguaje", "");
 			}
 			else {
-				setnames("Primer Lenguaje", "Segundo Lenguaje", 1);
+				setnames("Primer Lenguaje", "Segundo Lenguaje");
 			}
 		} else {
-			setnames("Palabra", "", 2);
+			setnames("Palabra", "");
 		}
 		showFR();
 		// mostrar los div de captura de datos y de resultado
