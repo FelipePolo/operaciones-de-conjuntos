@@ -42,7 +42,7 @@ const showFR = () => {
 const borrar = () => {
 	$("input[id=entrada1]").val(null);
 	$("input[id=entrada2]").val(null);
-	$("input[id=resultado]").val(null);
+	document.getElementById("resultado").innerHTML = "";
 };
 
 // le pone nombre a los dos label

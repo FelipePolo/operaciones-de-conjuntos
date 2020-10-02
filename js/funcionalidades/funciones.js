@@ -48,7 +48,7 @@ const difference = (cadena1, cadena2) => {
     // conjunto vacío
     result.push("!"); // Este es el simbolo del vacío
   }
-  return  `{ ${cadena1} } ∩ { ${cadena2} } = { ${result} }`;
+  return  `{ ${cadena1} } - { ${cadena2} } = { ${result} }`;
 };
 
 
