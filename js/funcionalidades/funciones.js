@@ -47,7 +47,6 @@ const interseccion = (elemento1, elemento2) => {
   return `{ ${elemento1} } ∩ { ${elemento2} } = { ${resultado} }`;
 };
 
-
 const difference = (cadena1, cadena2) => {
   let element1 = cadena1;
   let element2 = cadena2;
@@ -120,3 +119,4 @@ const cardinality = (palabra) => {
 
 //exportando las funciones
 export { union, difference, concatenation, inverse, potency, cardinality, interseccion };
+
