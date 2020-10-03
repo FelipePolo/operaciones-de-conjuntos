@@ -1,5 +1,6 @@
 // se importan las funciones del archivo funciones.js
-import { union, difference, cardinalidad, concatenacion } from "./funciones.js";
+import { union, difference, concatenation, inverse, potency, cardinality, interseccion, InverseWord } from "./funciones.js";
+
 // todo los llamados a las funciones suceden aqui!
 
 $("#boton").click((e) => {
@@ -27,9 +28,14 @@ $("#boton").click((e) => {
 
     case "operacioninterseccionAlfabetos":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = interseccion(valinput1, valinput2);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
       break;
 
     case "operaciondiferenciaAlfabetos":
@@ -45,71 +51,107 @@ $("#boton").click((e) => {
 
     case "operacionunionLenguajes":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = union(valinput1, valinput2);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
       break;
 
     case "operaciondiferenciaLenguajes":
       // insertar codigo aqui
-
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      // se llama a la funcion diferrencia by ana
+      resultado = difference(valinput1, valinput2);
       //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      logResultado(resultado);
       break;
 
     case "operacioninterseccionLenguajes":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = interseccion(valinput1, valinput2);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
       break;
 
-    case "operacionconcatenacionLenguajes":     
-     // insertar codigo aqui
-    //se obtienen los valores de los imputs
-    valinput1 = getvalues("entrada1");
-    valinput2 = getvalues("entrada2");
-    // se llama a la funcion concatenacion by ana
-    //mandar a imprimir el resultado
-     logResultado(concatenacion(valinput1, valinput2));
+
+    case "operacionconcatenacionLenguajes":
+      // insertar codigo aqui
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = getvalues("entrada2");
+      console.log(valinput1)
+      // se llama a la funcion union
+      let concatenacion = [];
+      concatenacion.push(concatenation(valinput1, valinput2));
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(`{ ${concatenacion} }`);
       break;
 
     case "operacioninversoLenguajes":
       // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = inverse(valinput1);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
       break;
 
-    case "operacionpotenciaLenguajes":
-      // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
-      break;
 
     case "operacioncardinalidadLenguajes":
       // insertar codigo aqui
-      
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = valinput1.length;
+      //mandar a imprimir el resultado en el div "resultado"
+      $("#resultado").html(valinput1.length);
       break;
 
     case "operacioncardinalidadPalabras":
-      // insertar codigo aqui
-
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      // se llama a la funcion union
+      resultado = cardinality("entrada1");
+      //mandar a imprimir el resultado en el div "resultado"
+      $("#resultado").html("|" + $("#entrada1").val() + "|=" + resultado);
       break;
 
     case "operacioninversaPalabras":
-      // insertar codigo aqui
-
+      // insertar codigo aqui   
+      valinput1 = $("#entrada1").val();
+      console.log(valinput1);
+      resultado = InverseWord(valinput1);
+      console.log(resultado);
       //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      $("#resultado").html("Inverso de {" + $("#entrada1").val() + "} =" + resultado);
       break;
+    case "operacionpotenciaLenguajes":
+      // insertar codigo aqui
+      //se obtienen los valores de los imputs
+      valinput1 = getvalues("entrada1");
+      valinput2 = document.getElementById("entrada2").value;
+      console.log(valinput2)
+      // se llama a la funcion union
+      resultado = potency(valinput1, valinput2);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(resultado);
+      break;
+
   }
 });
+
 
 // obtiene los valores del input que le solicites y te regresa un array
 const getvalues = (idinput) => {
@@ -121,5 +163,7 @@ const getvalues = (idinput) => {
 };
 
 const logResultado = (cadena) => {
+
   $("#resultado").html(cadena);
+
 };
