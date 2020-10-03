@@ -110,8 +110,14 @@ const cardinality = (palabra) => {
   return array.length;
 }
 
+const InverseWord = (palabra)=>{
+
+  let result = palabra.split("").reverse();
+
+  return result.join("");
+}
 
 
 
 //exportando las funciones
-export { union, difference, concatenation, inverse, potency, cardinality, interseccion };
+export { union, difference, concatenation, inverse, potency, cardinality, interseccion, InverseWord};

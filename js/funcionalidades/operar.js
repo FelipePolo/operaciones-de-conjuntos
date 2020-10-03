@@ -1,5 +1,5 @@
 // se importan las funciones del archivo funciones.js
-import { union, difference, concatenation, inverse, potency, cardinality, interseccion } from "./funciones.js";
+import { union, difference, concatenation, inverse, potency, cardinality, interseccion, InverseWord } from "./funciones.js";
 // todo los llamados a las funciones suceden aqui!
 
 $("#boton").click((e) => {
@@ -126,10 +126,13 @@ $("#boton").click((e) => {
       break;
 
     case "operacioninversaPalabras":
-      // insertar codigo aqui
-
+      // insertar codigo aqui   
+      valinput1 = $("#entrada1").val();
+      console.log(valinput1);
+      resultado = InverseWord(valinput1);
+      console.log(resultado);
       //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      $("#resultado").html("Inverso de {" + $("#entrada1").val() + "} =" + resultado);
       break;
     case "operacionpotenciaLenguajes":
       // insertar codigo aqui
