@@ -93,7 +93,7 @@ $("#boton").click((e) => {
       let concatenacion = [];
       concatenacion.push(concatenation(valinput1, valinput2));
       //mandar a imprimir el resultado en el div "resultado"
-      logResultado(`{ ${concatenacion} }`);
+      logResultado(`{${valinput1}}{${valinput2}} = {${concatenacion}}`);
       break;
     case "operacioninversoLenguajes":
       // insertar codigo aqui
@@ -103,7 +103,9 @@ $("#boton").click((e) => {
       // se llama a la funcion union
       resultado = inverse(valinput1);
       //mandar a imprimir el resultado en el div "resultado"
-      logResultado(resultado);
+
+      logResultado("{"+valinput1+"}"+"<sup>I</sup>"+ "=" + resultado);
+
       break;
 
 
@@ -115,7 +117,9 @@ $("#boton").click((e) => {
       // se llama a la funcion union
       resultado = valinput1.length;
       //mandar a imprimir el resultado en el div "resultado"
-      $("#resultado").html(valinput1.length);
+      //$("#resultado").html(valinput1.length);
+      logResultado("|{"+valinput1+"}|"+"="+ resultado);
+
       break;
 
     case "operacioncardinalidadPalabras":
@@ -140,7 +144,7 @@ $("#boton").click((e) => {
       // se llama a la funcion union
       resultado = potency(valinput1, valinput2);
       //mandar a imprimir el resultado en el div "resultado"
-      logResultado(resultado);
+      logResultado("{"+valinput1+"}"+"<sup>"+valinput2+"</sup>"+ "="+ resultado);
       break;
 
   }

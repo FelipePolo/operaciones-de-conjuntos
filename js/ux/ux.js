@@ -79,5 +79,4 @@ const setnames = (label1, label2) => {
 		$("#entrada2").hide();
 	}
 
-
 };
