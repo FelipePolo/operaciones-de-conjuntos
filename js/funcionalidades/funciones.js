@@ -42,20 +42,20 @@ const interseccion = (elemento1, elemento2) => {
     }
   }
   if(resultado==""){
-    resultado = "!";
+    resultado = "!";//si no existe interseccion el conjunto quedaria vacio
   }
   return `{ ${elemento1} } ∩ { ${elemento2} } = { ${resultado} }`;
 };
 
 
 const difference = (cadena1, cadena2) => {
-  // se convierte en un conjunto dividiendo elementos por la ",", al convertir a conjunto evita que se repitan elemntos dentro de el
   let element1 = cadena1;
   let element2 = cadena2;
-
+  
+  //filter guarda en result los elementos de la posicion i de element1 que cumplan con la condicion de retorno,
+  // retorna si el elemento en la posicion i de element1 no se encuentra en element2
+  
   let result = element1.filter(function (i) {
-    //filter guarda en result los elementos de la posicion i de element1 que cumplan con la condicion de retorno,
-    // retorna si el elemento en la posicion i de element1 no se encuentra en element2
     return !element2.includes(i); //include retorna true si el elemento en la posicion i del element1 se encuentra en element2
   });
   if (result == "") {
@@ -79,31 +79,25 @@ const potency = (cadena, num) => {
 
 const concatenation = (cadena1, cadena2) => {
   var result = [];
-
-  for (let i = 0; i < cadena1.length; i++) {
-    for (let j = 0; j < cadena2.length; j++) {
-      if (cadena1[i] == "!") {
-        if (!result.includes(cadena2[j])) {
-          result.push(cadena2[j]);
-        }
-      }
-      else if (cadena2[j] == "!") {
-        if (!result.includes(cadena1[j])) {
-          result.push(cadena2[j]);
-        }
-      }
-      else {
+  if(cadena1 == "!"){
+		result = cadena2;// si el elemento 1 es vacio el elemento 2 sera el resultado
+	}else if(cadena2 == "!"){
+		result = cadena1;// si el elemento 2 es vacio el elemento 1 sera el resultado
+	}else{
+    for (let i = 0; i < cadena1.length; i++) {
+      for (let j = 0; j < cadena2.length; j++) {
         if (!result.includes(cadena1[i] + cadena2[j])) {
           result.push(cadena1[i] + cadena2[j]);
         }
-
       }
     }
   }
+
   return result;
 }
 
 const inverse = (cadena) => {
+
   let result = [];
 
   for (let i = 0; i < cadena.length; i++) {
