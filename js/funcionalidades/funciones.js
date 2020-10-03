@@ -4,6 +4,7 @@ const union = (elemento1, elemento2) => {
 	resultado.push(elemento1); //a resultado se le asigna el primer vector de elementos
 	//se compara el segundo vector con los elementos del primero, si se encuentra ya no se coloca
 	if(elemento1 == "!"){
+		console.log("entra");
 		return `{ ${elemento1} } U { ${elemento2} } = { ${elemento2} }`;
 	}else if(elemento2 == "!"){
 		return `{ ${elemento1} } U { ${elemento2} } = { ${elemento1} }`;
