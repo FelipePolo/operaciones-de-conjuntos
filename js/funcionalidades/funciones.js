@@ -1,42 +1,48 @@
 // funcion union
 const union = (elemento1, elemento2) => {
 	var resultado = [];
-	resultado.push(elemento1); //a resultado se le asigna el primer vector de elementos
-	//se compara el segundo vector con los elementos del primero, si se encuentra ya no se coloca
 	if(elemento1 == "!"){
-		console.log("entra");
-		return `{ ${elemento1} } U { ${elemento2} } = { ${elemento2} }`;
+		resultado = elemento2;// si el elemento 1 es vacio el elemento 2 sera el resultado
 	}else if(elemento2 == "!"){
-		return `{ ${elemento1} } U { ${elemento2} } = { ${elemento1} }`;
+		resultado = elemento1;// si el elemento 2 es vacio el elemento 1 sera el resultado
 	}else{
+    resultado.push(elemento1); //a resultado se le asigna el primer vector de elementos
+    //se compara el segundo vector con los elementos del primero, si se encuentra ya no se coloca
 		for (let i = 0; i < elemento2.length; i++) {
 			let k = true;
-		    for (let j = 0; j < elemento1.length; j++) {
-		    	if (elemento2[i] == elemento1[j]) {
-		    		k = false;
-		    	}
+		  for (let j = 0; j < elemento1.length; j++) {
+		    if (elemento2[i] == elemento1[j]) {
+		    	k = false;
 		    }
-		    if (k == true) {
-		    	resultado.push(elemento2[i]);
-		    }
-		 }
-		  	return `{ ${elemento1} } U { ${elemento2} } = { ${resultado} }`;
-	};
+		  }
+		  if (k == true) {
+		    resultado.push(elemento2[i]);
+		  }
+		}
   }
-  
+  return `{ ${elemento1} } U { ${elemento2} } = { ${resultado} }`;
+};
 
 const interseccion = (elemento1, elemento2) => {
   var resultado = [];
-  for (let i = 0; i < elemento2.length; i++) {
-    let k = false;
-    for (let j = 0; j < elemento1.length; j++) {
-      if (elemento2[i] == elemento1[j]) {
-        k = true;
+  if(elemento1 == "!" || elemento2 == "!"){
+		resultado = "!";// si alguno de los dos es ! el resultado de la interseccion sera !
+	}else{
+    //se compara el primer vector con el segundo, si se encuentra, se coloca en el vector resultado
+    for (let i = 0; i < elemento2.length; i++) {
+      let k = false;
+      for (let j = 0; j < elemento1.length; j++) {
+        if (elemento2[i] == elemento1[j]) {
+          k = true;
+        }
+      }
+      if (k == true) {
+        resultado.push(elemento2[i]);
       }
     }
-    if (k == true) {
-      resultado.push(elemento2[i]);
-    }
+  }
+  if(resultado==""){
+    resultado = "!";
   }
   return `{ ${elemento1} } ∩ { ${elemento2} } = { ${resultado} }`;
 };
@@ -117,9 +123,6 @@ const cardinality = (palabra) => {
     .split("");
   return array.length;
 }
-
-
-
 
 //exportando las funciones
 export { union, difference, concatenation, inverse, potency, cardinality, interseccion };
