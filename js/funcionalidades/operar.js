@@ -103,7 +103,9 @@ $("#boton").click((e) => {
       // se llama a la funcion union
       resultado = inverse(valinput1);
       //mandar a imprimir el resultado en el div "resultado"
+
       logResultado("{"+valinput1+"}"+"<sup>I</sup>"+ "=" + resultado);
+
       break;
 
 
@@ -117,6 +119,7 @@ $("#boton").click((e) => {
       //mandar a imprimir el resultado en el div "resultado"
       //$("#resultado").html(valinput1.length);
       logResultado("|{"+valinput1+"}|"+"="+ resultado);
+
       break;
 
     case "operacioncardinalidadPalabras":
