@@ -101,12 +101,8 @@ const inverse = (cadena) => {
   let result = [];
 
   for (let i = 0; i < cadena.length; i++) {
-    let cadenaAux = cadena[i].split("");
-    let aux = "";
-    for (let j = (cadenaAux.length) - 1; j >= 0; j--) {
-      aux += cadenaAux[j];
-    }
-    result.push(aux);
+    let aux = cadena[i].split("").reverse();
+    result.push(aux.join(""));
   }
   return `{ ${result} }`;
 }
