@@ -130,10 +130,15 @@ $("#boton").click((e) => {
       break;
 
     case "operacioninversaPalabras":
-      // insertar codigo aqui
+      //palabra.split("").reverse();
+      valinput1 = [$("#entrada1").val()];
+      console.log(valinput1)
+      // se llama a la funcion union
+      resultado = inverse(valinput1);
+      //mandar a imprimir el resultado en el div "resultado"
+      logResultado(valinput1+"<sup>I</sup>"+ "=" + resultado);
 
-      //mandar a imprimir el resultado
-      logResultado("imprimir el resultado");
+      
       break;
     case "operacionpotenciaLenguajes":
       // insertar codigo aqui
