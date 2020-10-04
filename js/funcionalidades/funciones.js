@@ -97,9 +97,7 @@ const concatenation = (cadena1, cadena2) => {
 }
 
 const inverse = (cadena) => {
-
   let result = [];
-
   for (let i = 0; i < cadena.length; i++) {
     let aux = cadena[i].split("").reverse();
     result.push(aux.join(""));
