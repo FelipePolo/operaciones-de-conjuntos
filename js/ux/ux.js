@@ -3,13 +3,13 @@ $(function () {
 		//La funcion borrar se usa cada vez que se elige una operacion diferente
 		borrar();
 		// obtener el id de la operacion que se llamó
-		let operacion = e.target.id
+		let operacion = e.target.id;
 
-		let boton = $("button[name=operar]")[0]
-
+		let boton = $("button[name=operar]")[0];
+		
+		let NameOperacion = document.getElementById(e.target.id).innerHTML;
 		// asignarle la operacion a el boton para que desencadene un evento click
 		boton.setAttribute("id", "operacion" + operacion);
-
 		// colocarle los nombres a los label
 		if (operacion.includes("Alfabetos")) {
 			setnames("Primer Alfabeto", "Segundo Alfabeto");
@@ -27,8 +27,11 @@ $(function () {
 			setnames("Palabra", "");
 		}
 		// mostrar los div de captura de datos y de resultado
+		
 		showFR();
+		ShowTittle(NameOperacion);
 	});
+    
 });
 
 // FUNCIONES REUTILIZANLES
@@ -44,6 +47,14 @@ const borrar = () => {
 	$("input[id=entrada2]").val(null);
 	document.getElementById("resultado").innerHTML = "";
 };
+
+const ShowTittle = (valor) => {
+
+//Subtitulo de cada operacion
+
+  $("#tittle").html("<h4>"+valor+"</h4>");
+  console.log(valor);	
+}
 
 // le pone nombre a los dos label
 const setnames = (label1, label2) => {
